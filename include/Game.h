@@ -1,0 +1,41 @@
+#ifndef GAME_H
+#define GAME_H
+
+#include <SFML/Graphics.hpp>
+
+#include <iostream>
+
+#include "ResourceManager.h"
+#include "InputManager.h"
+#include "WorldManager.h"
+
+#define GAME_WIDTH 800
+#define GAME_HEIGHT 600
+#define FRAMERATE 60
+
+namespace GravityGame {
+    class Game
+    {
+        private:
+            sf::RenderWindow *window;
+
+        public:
+            static Game *g_game;
+            void createGame();
+
+            ResourceManager *resourceManager;
+            InputManager *inputManager;
+            WorldManager *worldManager;
+            Game(sf::RenderWindow *gameWindow);
+            virtual ~Game();
+            bool initialize();
+            bool run();
+            sf::RenderWindow* getWindow();
+    };
+}
+
+
+
+#endif // GAME_H
+
+

@@ -1,64 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="include/ActorContainer.h" open="0" top="0" tabpos="0">
-		<Cursor position="271" topLine="0" />
+	<File name="src/actors/PlayerContainer.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="174" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/Game.h" open="0" top="0" tabpos="8">
-		<Cursor position="338" topLine="0" />
+	<File name="src/scenes/TestScene.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="127" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/InputManager.h" open="0" top="0" tabpos="7">
-		<Cursor position="1432" topLine="25" />
+	<File name="include/scenes/TestScene.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/Manager.h" open="0" top="0" tabpos="6">
-		<Cursor position="166" topLine="0" />
+	<File name="include/WorldInfo.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="146" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/ResourceManager.h" open="0" top="0" tabpos="4">
-		<Cursor position="276" topLine="0" />
+	<File name="include/InputManager.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/Scene.h" open="0" top="0" tabpos="2">
-		<Cursor position="381" topLine="0" />
+	<File name="include/WorldManager.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="348" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/WorldInfo.h" open="0" top="0" tabpos="6">
-		<Cursor position="159" topLine="0" />
+	<File name="src/Game.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/WorldManager.h" open="0" top="0" tabpos="5">
-		<Cursor position="227" topLine="0" />
+	<File name="src/Manager.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/actors/Player.h" open="0" top="0" tabpos="0">
-		<Cursor position="16" topLine="0" />
+	<File name="include/Scene.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="include/actors/PlayerContainer.h" open="0" top="0" tabpos="0">
-		<Cursor position="146" topLine="0" />
+	<File name="include/SFML/Graphics/Sprite.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1783" topLine="32" />
+		</Cursor>
 	</File>
-	<File name="src/ActorContainer.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="119" topLine="0" />
+	<File name="include/actors/PlayerContainer.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Game.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="208" topLine="5" />
+	<File name="include/Manager.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/InputManager.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="462" topLine="1" />
+	<File name="src/WorldManager.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Manager.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="46" topLine="0" />
+	<File name="src/ActorContainer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="49" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/ResourceManager.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="182" topLine="0" />
+	<File name="include/ActorContainer.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="84" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Scene.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="130" topLine="0" />
+	<File name="src/InputManager.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/WorldManager.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="274" topLine="15" />
+	<File name="include/Game.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/actors/Player.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="134" topLine="0" />
+	<File name="src/ResourceManager.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/actors/PlayerContainer.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="255" topLine="0" />
-	</File>
-	<File name="src/scenes/TestScene.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="220" topLine="0" />
+	<File name="include/ResourceManager.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

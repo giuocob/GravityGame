@@ -3,7 +3,6 @@
 
 #include <map>
 #include <string>
-#include <boost/assign/list_of.hpp>
 #include "Actor.h"
 
 

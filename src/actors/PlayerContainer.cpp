@@ -6,9 +6,7 @@ using namespace GravityGame;
 
 PlayerContainer::PlayerContainer() : ActorContainer()
 {
-    textureMap = boost::assign::map_list_of
-                    (string("sprite"),string("res/sprite2.jpg"))
-                    ;
+    textureMap = { {string("sprite"),string("res/sprite2.jpg")} };
 }
 
 PlayerContainer::~PlayerContainer()

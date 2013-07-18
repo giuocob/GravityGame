@@ -2,12 +2,12 @@
 1371435522 source:/home/kevin/Development/Gravity/src/Game.cpp
 	"Game.h"
 
-1371435522 /home/kevin/Development/Gravity/include/Game.h
+1374117962 /home/kevin/Development/Gravity/include/Game.h
 	<SFML/Graphics.hpp>
 	<iostream>
-	"ResourceManager.h"
-	"InputManager.h"
-	"WorldManager.h"
+	"resource/ResourceManager.h"
+	"input/InputManager.h"
+	"world/WorldManager.h"
 
 1365711627 /home/kevin/Development/Gravity/include/SFML/Graphics.hpp
 	<SFML/Window.hpp>
@@ -403,8 +403,8 @@
 1371435522 source:/home/kevin/Development/Gravity/src/actors/Player.cpp
 	"actors/Player.h"
 
-1371435522 /home/kevin/Development/Gravity/include/actors/Player.h
-	"Actor.h"
+1374118071 /home/kevin/Development/Gravity/include/actors/Player.h
+	"world/Actor.h"
 
 1371435522 source:/home/kevin/Development/Gravity/src/Actor.cpp
 	"Actor.h"
@@ -417,9 +417,9 @@
 	"actors/PlayerContainer.h"
 	"actors/Player.h"
 
-1371435522 /home/kevin/Development/Gravity/include/actors/PlayerContainer.h
-	"ActorContainer.h"
-	"Player.h"
+1374118097 /home/kevin/Development/Gravity/include/actors/PlayerContainer.h
+	"world/ActorContainer.h"
+	"actors/Player.h"
 
 1373145952 /home/kevin/Development/Gravity/include/WorldInfo.h
 
@@ -427,8 +427,8 @@
 	"scenes/TestScene.h"
 	"Game.h"
 
-1371435522 /home/kevin/Development/Gravity/include/scenes/TestScene.h
-	"Scene.h"
+1374118043 /home/kevin/Development/Gravity/include/scenes/TestScene.h
+	"world/Scene.h"
 
 1365711627 /home/kevin/Development/Gravity/include/SFML/System/Export.hpp
 	<SFML/Config.hpp>
@@ -574,4 +574,61 @@
 1365711627 /home/kevin/Development/Gravity/include/SFML/Audio/SoundSource.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Vector3.hpp>
+
+1374117986 /home/kevin/Development/Gravity/include/world/Actor.h
+	"SFML/Graphics.hpp"
+	"world/WorldInfo.h"
+
+1373145952 /home/kevin/Development/Gravity/include/world/WorldInfo.h
+
+1374117991 /home/kevin/Development/Gravity/include/world/ActorContainer.h
+	<map>
+	<string>
+	"world/Actor.h"
+
+1374118053 /home/kevin/Development/Gravity/include/resource/ResourceManager.h
+	"Manager.h"
+	"world/WorldInfo.h"
+	<string>
+	<map>
+
+1371435522 /home/kevin/Development/Gravity/include/input/InputManager.h
+	"Manager.h"
+	<vector>
+
+1374118031 /home/kevin/Development/Gravity/include/world/WorldManager.h
+	"Manager.h"
+	"world/Scene.h"
+	"world/WorldInfo.h"
+	"world/ActorContainer.h"
+	"actors/PlayerContainer.h"
+	"scenes/TestScene.h"
+
+1374118006 /home/kevin/Development/Gravity/include/world/Scene.h
+	"world/WorldInfo.h"
+	"world/ActorContainer.h"
+	<vector>
+	<map>
+
+1374118105 source:/home/kevin/Development/Gravity/src/input/InputManager.cpp
+	"input/InputManager.h"
+	"Game.h"
+	<iostream>
+
+1374118117 source:/home/kevin/Development/Gravity/src/resource/ResourceManager.cpp
+	"resource/ResourceManager.h"
+	"Game.h"
+
+1374118160 source:/home/kevin/Development/Gravity/src/world/Actor.cpp
+	"world/Actor.h"
+
+1374118165 source:/home/kevin/Development/Gravity/src/world/ActorContainer.cpp
+	"world/ActorContainer.h"
+
+1374118168 source:/home/kevin/Development/Gravity/src/world/Scene.cpp
+	"world/Scene.h"
+
+1374118172 source:/home/kevin/Development/Gravity/src/world/WorldManager.cpp
+	"world/WorldManager.h"
+	"Game.h"
 

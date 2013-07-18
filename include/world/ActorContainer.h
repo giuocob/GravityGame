@@ -3,7 +3,7 @@
 
 #include <map>
 #include <string>
-#include "Actor.h"
+#include "world/Actor.h"
 
 
 namespace GravityGame {

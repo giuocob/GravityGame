@@ -2,9 +2,9 @@
 #define WORLDMANAGER_H
 
 #include "Manager.h"
-#include "Scene.h"
-#include "WorldInfo.h"
-#include "ActorContainer.h"
+#include "world/Scene.h"
+#include "world/WorldInfo.h"
+#include "world/ActorContainer.h"
 
 //All actor headers go here
 #include "actors/PlayerContainer.h"

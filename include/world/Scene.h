@@ -1,11 +1,10 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "WorldInfo.h"
-#include "ActorContainer.h"
+#include "world/WorldInfo.h"
+#include "world/ActorContainer.h"
 #include <vector>
 #include <map>
-#include <boost/assign/list_of.hpp>
 
 namespace GravityGame {
     class Scene

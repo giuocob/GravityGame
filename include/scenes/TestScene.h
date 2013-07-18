@@ -2,7 +2,7 @@
 #define TESTSCENE_H
 
 
-#include "Scene.h"
+#include "world/Scene.h"
 
 namespace GravityGame {
     class TestScene : Scene

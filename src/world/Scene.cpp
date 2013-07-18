@@ -1,4 +1,4 @@
-#include "Scene.h"
+#include "world/Scene.h"
 
 using namespace GravityGame;
 using namespace std;

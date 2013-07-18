@@ -1,8 +1,8 @@
 #ifndef PLAYERCONTAINER_H
 #define PLAYERCONTAINER_H
 
-#include "ActorContainer.h"
-#include "Player.h"
+#include "world/ActorContainer.h"
+#include "actors/Player.h"
 
 namespace GravityGame {
     class PlayerContainer : ActorContainer

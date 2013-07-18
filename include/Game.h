@@ -5,9 +5,9 @@
 
 #include <iostream>
 
-#include "ResourceManager.h"
-#include "InputManager.h"
-#include "WorldManager.h"
+#include "resource/ResourceManager.h"
+#include "input/InputManager.h"
+#include "world/WorldManager.h"
 
 #define GAME_WIDTH 800
 #define GAME_HEIGHT 600

@@ -2,7 +2,7 @@
 #define RESOURCEMANAGER_H
 
 #include "Manager.h"
-#include "WorldInfo.h"
+#include "world/WorldInfo.h"
 #include <string>
 #include <map>
 

@@ -1,4 +1,4 @@
-#include "ResourceManager.h"
+#include "resource/ResourceManager.h"
 #include "Game.h"
 
 using namespace GravityGame;

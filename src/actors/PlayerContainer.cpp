@@ -6,7 +6,7 @@ using namespace GravityGame;
 
 PlayerContainer::PlayerContainer() : ActorContainer()
 {
-    textureMap = { {string("sprite"),string("res/sprite2.jpg")} };
+    textureMap = { {"sprite","res/sprite2.jpg"} };
 }
 
 PlayerContainer::~PlayerContainer()

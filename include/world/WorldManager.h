@@ -8,6 +8,7 @@
 
 //All actor headers go here
 #include "actors/PlayerContainer.h"
+#include "actors/SpriteCanContainer.h"
 
 //All scene headers go here
 #include "scenes/TestScene.h"

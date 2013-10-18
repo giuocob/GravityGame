@@ -34,6 +34,9 @@ bool Game::run()
     sf::Texture pony;
     pony.loadFromFile("res/sprite2.jpg");
     sf::Sprite ponysprite(pony);
+    
+    ActorContainer *container = new SpriteCanContainer();
+    Actor *sprite = container->createActor();
 
     // Start game loop
     while (window->isOpen())

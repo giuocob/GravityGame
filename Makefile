@@ -26,7 +26,7 @@ SCENE_DIR = scenes
 SRCSCENE = TestScene.cpp
 
 ACTOR_DIR = actors
-SRCACTOR = Player.cpp PlayerContainer.cpp SpriteCan.cpp SpriteCanContainer.cpp
+SRCACTOR = Player.cpp SpriteCan.cpp
 
 SOURCES = $(SRCMAIN) \
 		$(SRCINPUT:%=$(INPUT_DIR)/%) \

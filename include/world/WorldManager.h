@@ -7,8 +7,8 @@
 #include "world/ActorContainer.h"
 
 //All actor headers go here
-#include "actors/PlayerContainer.h"
-#include "actors/SpriteCanContainer.h"
+#include "actors/Player.h"
+#include "actors/SpriteCan.h"
 
 //All scene headers go here
 #include "scenes/TestScene.h"

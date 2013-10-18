@@ -1,9 +1,20 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "world/ActorContainer.h"
 #include "world/Actor.h"
 
 namespace GravityGame {
+	class PlayerContainer : ActorContainer
+    {
+        public:
+            PlayerContainer();
+            virtual ~PlayerContainer();
+            Actor* createActor();
+        protected:
+        private:
+    };
+    
     class Player : Actor
     {
         public:

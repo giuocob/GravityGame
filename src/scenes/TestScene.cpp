@@ -6,7 +6,7 @@ using namespace GravityGame;
 
 TestScene::TestScene()
 {
-    sceneActorIds = { WorldInfo::Player };
+    
 }
 
 TestScene::~TestScene()

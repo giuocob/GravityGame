@@ -5,19 +5,25 @@
 #include "world/ActorContainer.h"
 #include <vector>
 #include <map>
+#include <string>
 
 namespace GravityGame {
+	class WorldManager;  //Forward for world manager (all children should duplicate this)
+	
     class Scene
     {
-        public:
+		private:
+			bool loadErr;
+			std::string errMessage;
+		public:
+			friend class WorldManager;
             bool actorListReady;
-            std::vector<WorldInfo::ActorId> sceneActorIds;
+            std::string sceneFile;   //Each scene should set this
             std::map<WorldInfo::ActorId,ActorContainer*> sceneActors;
-
+            std::vector<Actor*> actorList;
+            
             Scene();
             virtual ~Scene();
-        protected:
-        private:
     };
 }
 

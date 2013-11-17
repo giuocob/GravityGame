@@ -1,0 +1,10 @@
+GRSCENE
+TestScene
+&&&&
+ALIST
+SpriteCan
+&&&&
+ACTOR
+SpriteCan
+POSX=200
+POSY=200

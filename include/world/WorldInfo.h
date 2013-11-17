@@ -8,7 +8,8 @@ namespace GravityGame {
         };
 
         enum ActorId {
-            Player
+            Player,
+            SpriteCan
         };
     }
 }

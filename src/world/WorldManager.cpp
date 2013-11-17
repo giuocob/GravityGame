@@ -6,7 +6,9 @@ using namespace std;
 
 WorldManager::WorldManager()
 {
-    //ctor
+    sceneLookup = { {"TestScene",WorldInfo::TestScene} };
+    actorLookup = { {"Player",WorldInfo::Player},
+					{"SpriteCan",WorldInfo::SpriteCan} };
 }
 
 WorldManager::~WorldManager()
@@ -16,9 +18,9 @@ WorldManager::~WorldManager()
 
 bool WorldManager::init()
 {
-    currentScene = (Scene*)(new TestScene());
-    addSceneActorContainers();
-    Game::g_game->resourceManager->loadSceneContent();
+    //currentScene = (Scene*)(new TestScene());
+    //addSceneActorContainers();
+    //Game::g_game->resourceManager->loadSceneContent();
     return true;
 }
 
@@ -27,23 +29,28 @@ bool WorldManager::update()
     return true;
 }
 
-bool WorldManager::addSceneActorContainers()
-{
-    for(vector<WorldInfo::ActorId>::size_type i = 0; i < currentScene->sceneActorIds.size(); i++)
-    {
-        ActorContainer *container = createActorContainer(currentScene->sceneActorIds[i]);
-        currentScene->sceneActors.insert(make_pair(currentScene->sceneActorIds[i],container));
-    }
-    currentScene->actorListReady = true;
-    return true;
+Scene* WorldManager::createScene(WorldInfo::SceneId id) {
+	switch(id) {
+		case WorldInfo::TestScene :
+			return (Scene*)(new TestScene());
+		default:
+			return NULL;
+	}
 }
 
-ActorContainer* WorldManager::createActorContainer(WorldInfo::ActorId id)
-{
+ActorContainer* WorldManager::createActorContainer(WorldInfo::ActorId id) {
     switch(id) {
         case WorldInfo::Player :
             return (ActorContainer*)(new PlayerContainer());
+        case WorldInfo::SpriteCan :
+			return (ActorContainer*)(new SpriteCanContainer());
         default :
             return NULL;
     }
+}
+
+ActorContainer* WorldManager::createActorContainer(std::string name) {
+	map<string,WorldInfo::ActorId>::iterator iter = actorLookup.find(name);
+	if(iter == actorLookup.end()) return NULL;
+	return createActorContainer(iter->second);
 }

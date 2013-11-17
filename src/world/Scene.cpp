@@ -6,6 +6,7 @@ using namespace std;
 Scene::Scene()
 {
     actorListReady = false;
+    loadErr = false;
 }
 
 Scene::~Scene()

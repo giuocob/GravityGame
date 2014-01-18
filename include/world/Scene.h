@@ -8,7 +8,7 @@
 #include <string>
 
 namespace GravityGame {
-	class WorldManager;  //Forward for world manager (all children should duplicate this)
+	class WorldManager;  //Forward for world manager
 	
     class Scene
     {

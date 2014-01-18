@@ -31,9 +31,9 @@ namespace GravityGame {
             bool init();
             bool update();
             Scene* createScene(WorldInfo::SceneId id);
+            Scene* loadScene(WorldInfo::SceneId id);
             ActorContainer* createActorContainer(WorldInfo::ActorId id);
             ActorContainer* createActorContainer(std::string name);
-            Scene* loadScene(WorldInfo::SceneId id);
     };
 }
 

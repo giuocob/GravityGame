@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include "world/Actor.h"
+#include "world/WorldInfo.h"
 
 
 namespace GravityGame {
@@ -11,6 +12,7 @@ namespace GravityGame {
     {
         public:
             std::map<std::string,std::string> textureMap;
+            std::vector<WorldInfo::ActorId> actorDependencies;
             ActorContainer();
             virtual ~ActorContainer();
             virtual Actor* createActor() =0;

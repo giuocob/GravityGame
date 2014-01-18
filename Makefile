@@ -4,7 +4,7 @@ PATH_TO_MAKE = /home/kevin/Development/Gravity
 
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = -L$(PATH_TO_MAKE)/lib -lsfml-audio -lsfml-graphics -lsfml-system -lsfml-window
+LDFLAGS = -L$(PATH_TO_MAKE)/lib -L/usr/lib/x86_64-linux-gnu -lsfml-audio -lsfml-graphics -lsfml-system -lsfml-window
 
 BIN_DIR = bin
 OBJ_DIR = obj

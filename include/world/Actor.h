@@ -7,11 +7,17 @@
 namespace GravityGame {
     class Actor : sf::Sprite
     {
+    	private:
+    		double posX,posY;
+
         public:
             Actor();
             virtual ~Actor();
-        protected:
-        private:
+
+            void setPosX(double x);
+            void setPosY(double y);
+            void setPosition(double x, double y);
+
     };
 }
 

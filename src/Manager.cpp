@@ -4,10 +4,10 @@ using namespace GravityGame;
 
 Manager::Manager()
 {
-    error = NULL;
+    //Do nothing
 }
 
 Manager::~Manager()
 {
-    if(error) delete error;
+    //Still doin nothing
 }

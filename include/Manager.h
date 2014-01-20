@@ -9,7 +9,7 @@ namespace GravityGame {
     class Manager
     {
         public:
-            std::string *error;
+            std::string error;
 
             Manager();
             virtual ~Manager();

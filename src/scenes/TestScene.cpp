@@ -6,7 +6,7 @@ using namespace GravityGame;
 
 TestScene::TestScene()
 {
-    
+    sceneFile = "testscene.grs";
 }
 
 TestScene::~TestScene()

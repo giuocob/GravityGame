@@ -22,6 +22,8 @@ namespace GravityGame {
 		private:
 			std::map<std::string,WorldInfo::SceneId> sceneLookup;
 			std::map<std::string,WorldInfo::ActorId> actorLookup;
+
+            std::string SF_FIRSTLINE,SF_DELIMITER;
 		
         public:
             Scene *currentScene;

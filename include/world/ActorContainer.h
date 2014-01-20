@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include "world/Actor.h"
+#include "world/ActorData.h"
 #include "world/WorldInfo.h"
 
 

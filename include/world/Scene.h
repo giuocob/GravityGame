@@ -24,6 +24,8 @@ namespace GravityGame {
             
             Scene();
             virtual ~Scene();
+            void addActorContainer(ActorContainer* container, WorldInfo::ActorId actorId);
+            Actor* createActor(WorldInfo::ActorId actorId, ActorData* actorData);
     };
 }
 

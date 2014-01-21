@@ -3,6 +3,7 @@
 
 #include "world/Actor.h"
 #include "world/ActorContainer.h"
+#include <string>
 
 namespace GravityGame {
 	class SpriteCanContainer : public ActorContainer
@@ -11,13 +12,18 @@ namespace GravityGame {
             SpriteCanContainer();
             virtual ~SpriteCanContainer();
             Actor* createActor();
+            virtual void addActorProperty(Actor* actor, std::string property, std::string value);
     };
     
-    class SpriteCan : Actor
+    class SpriteCan : public Actor
     {
+        private:
+            std::string flavor;
         public:
             SpriteCan();
             virtual ~SpriteCan();
+            void setFlavor(std::string flavor);
+            void print();
     };
 }
 #endif

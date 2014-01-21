@@ -88,7 +88,6 @@ Scene* WorldManager::loadScene(WorldInfo::SceneId id) {
             std::string segment1, segment2;
             getline(iss,segment1,'=');
             getline(iss,segment2);
-            cout << segment1 << ' ' << segment2 << endl;
             actorData->addData(segment1,segment2);
             getline(sceneFile,line);
         }

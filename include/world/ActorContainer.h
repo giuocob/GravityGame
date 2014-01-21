@@ -17,6 +17,7 @@ namespace GravityGame {
             ActorContainer();
             virtual ~ActorContainer();
             virtual Actor* createActor() =0;
+            virtual void addActorProperty(Actor* actor, std::string property, std::string value);
     };
 }
 

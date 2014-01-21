@@ -7,6 +7,7 @@ SpriteCan
 ACTOR
 SpriteCan
 POSX=200
-POSY=200
+POSY=250
+FLAVOR=normal
 &&&&
 &&&&

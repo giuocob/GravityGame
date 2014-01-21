@@ -7,7 +7,7 @@
 namespace GravityGame {
     class Actor : sf::Sprite
     {
-    	private:
+    	protected:
     		double posX,posY;
 
         public:

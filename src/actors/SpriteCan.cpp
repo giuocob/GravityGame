@@ -45,13 +45,13 @@ SpriteCan::~SpriteCan()
 }
 
 bool SpriteCan::init() {
-	print();
+	//print();
 	return true;
 }
 
 
 bool SpriteCan::update() {
-	print();
+	//print();
 	return true;
 }
 

@@ -5,7 +5,7 @@ ALIST
 SpriteCan
 &&&&
 ACTOR
-SpriteCans
+SpriteCan
 POSX=200
 POSY=250
 FLAVOR=normal

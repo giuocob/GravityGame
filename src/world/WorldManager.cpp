@@ -57,9 +57,9 @@ Scene* WorldManager::loadScene(WorldInfo::SceneId id) {
     }
     //Open scene file and begin parsing
     string line;
-    ifstream sceneFile(std::string("scenefiles/")+scene->sceneFile);
+    ifstream sceneFile(std::string("scenefiles/")+scene->getSceneFile());
     if(!sceneFile.is_open()) {
-        error = "Could not open scene file: " + scene->sceneFile;
+        error = "Could not open scene file: " + scene->getSceneFile();
         return NULL;
     }
     getline(sceneFile,line);
@@ -82,6 +82,12 @@ Scene* WorldManager::loadScene(WorldInfo::SceneId id) {
     //Create actors
     getline(sceneFile,line);
     while(line.compare(SF_DELIMITER)) {
+        map<std::string,WorldInfo::ActorId>::iterator actorIter = actorLookup.find(line);
+        if(actorIter == actorLookup.end()) {
+            string sceneFilename = scene->getSceneFile();
+            error = "WorldManager: invalid actorId in scenefile " + sceneFilename + ": " + line; 
+            return NULL;
+        }
         WorldInfo::ActorId actorId = actorLookup[line];
         ActorData *actorData = new ActorData();
         //Populate actorData until next delimiter

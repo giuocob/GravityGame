@@ -14,6 +14,10 @@ Scene::~Scene()
     //dtor
 }
 
+string Scene::getSceneFile() {
+	return sceneFile;
+}
+
 
 bool Scene::update() {
 	if(!entityManager.update()) {

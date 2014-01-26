@@ -15,14 +15,15 @@ namespace GravityGame {
     {
         protected:
             EntityManager entityManager;
+            std::string sceneFile;   //Each scene should set this
 
 		public:
-            std::string sceneFile;   //Each scene should set this
             std::map<WorldInfo::ActorId,ActorContainer*> sceneActors;
             std::vector<Actor*> actorList;
             
             Scene();
             virtual ~Scene();
+            std::string getSceneFile();
 
             bool update();
             void addActorContainer(ActorContainer* container, WorldInfo::ActorId actorId);

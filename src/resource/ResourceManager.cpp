@@ -31,7 +31,7 @@ bool ResourceManager::loadSceneContent()
     textureIndex.clear();
     Scene *toLoad = Game::g_game->worldManager->currentScene;
     ActorContainer *currentContainer;
-    if(!toLoad->actorListReady) return false;
+    //if(!toLoad->actorListReady) return false;
     //Nested loop: iterate over all images in all actorContainers in the scene
     map<WorldInfo::ActorId,ActorContainer*>::iterator actorit;
     map<string,string>::iterator imageit;

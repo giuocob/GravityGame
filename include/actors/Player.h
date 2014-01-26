@@ -8,7 +8,7 @@ namespace GravityGame {
 	class PlayerContainer : ActorContainer
     {
         public:
-            PlayerContainer();
+            PlayerContainer(Scene* scene);
             virtual ~PlayerContainer();
             Actor* createActor();
         protected:
@@ -18,7 +18,7 @@ namespace GravityGame {
     class Player : Actor
     {
         public:
-            Player();
+            Player(Scene* scene);
             virtual ~Player();
         protected:
         private:

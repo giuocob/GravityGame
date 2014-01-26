@@ -9,12 +9,18 @@
 
 
 namespace GravityGame {
+    class Scene;
+
+
     class ActorContainer
     {
+        protected:
+            Scene *scene;
+
         public:
             std::map<std::string,std::string> textureMap;
             std::vector<WorldInfo::ActorId> actorDependencies;
-            ActorContainer();
+            ActorContainer(Scene* scene);
             virtual ~ActorContainer();
             virtual Actor* createActor() =0;
             virtual void addActorProperty(Actor* actor, std::string property, std::string value);

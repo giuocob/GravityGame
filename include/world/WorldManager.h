@@ -24,6 +24,7 @@ namespace GravityGame {
 			std::map<std::string,WorldInfo::ActorId> actorLookup;
 
             std::string SF_FIRSTLINE,SF_DELIMITER;
+
 		
         public:
             Scene *currentScene;
@@ -34,8 +35,8 @@ namespace GravityGame {
             bool update();
             Scene* createScene(WorldInfo::SceneId id);
             Scene* loadScene(WorldInfo::SceneId id);
-            ActorContainer* createActorContainer(WorldInfo::ActorId id);
-            ActorContainer* createActorContainer(std::string name);
+            ActorContainer* createActorContainer(WorldInfo::ActorId id, Scene* scene);
+            ActorContainer* createActorContainer(std::string name, Scene* scene);
     };
 }
 

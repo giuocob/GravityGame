@@ -1,11 +1,12 @@
 #include "world/ActorContainer.h"
+#include "world/Scene.h"
 
 using namespace std;
 using namespace GravityGame;
 
-ActorContainer::ActorContainer()
+ActorContainer::ActorContainer(Scene* scene)
 {
-
+	this->scene = scene;
 }
 
 ActorContainer::~ActorContainer()

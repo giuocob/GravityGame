@@ -9,7 +9,7 @@ namespace GravityGame {
 	class SpriteCanContainer : public ActorContainer
     {
         public:
-            SpriteCanContainer();
+            SpriteCanContainer(Scene* scene);
             virtual ~SpriteCanContainer();
             Actor* createActor();
             virtual void addActorProperty(Actor* actor, std::string property, std::string value);
@@ -20,8 +20,10 @@ namespace GravityGame {
         private:
             std::string flavor;
         public:
-            SpriteCan();
+            SpriteCan(Scene* scene);
             virtual ~SpriteCan();
+            void init();
+            virtual bool update();
             void setFlavor(std::string flavor);
             void print();
     };

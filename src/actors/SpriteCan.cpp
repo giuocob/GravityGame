@@ -5,7 +5,7 @@ using namespace GravityGame;
 using namespace std;
 
 
-SpriteCanContainer::SpriteCanContainer() : ActorContainer()
+SpriteCanContainer::SpriteCanContainer(Scene* scene) : ActorContainer(scene)
 {
     textureMap = { {"sprite","res/sprite2.jpg"} };
 }
@@ -17,7 +17,7 @@ SpriteCanContainer::~SpriteCanContainer()
 
 Actor* SpriteCanContainer::createActor()
 {
-    SpriteCan *ret = new SpriteCan();
+    SpriteCan *ret = new SpriteCan(scene);
     return (Actor*)ret;
 }
 
@@ -34,9 +34,9 @@ void SpriteCanContainer::addActorProperty(Actor* actor, std::string property, st
 
 
 
-SpriteCan::SpriteCan() : Actor()
+SpriteCan::SpriteCan(Scene* scene) : Actor(scene)
 {
-    
+
 }
 
 SpriteCan::~SpriteCan()
@@ -44,10 +44,20 @@ SpriteCan::~SpriteCan()
     //dtor
 }
 
+void SpriteCan::init() {
+	print();
+}
+
+
+bool SpriteCan::update() {
+	print();
+	return true;
+}
+
 void SpriteCan::setFlavor(std::string flavor) {
 	this->flavor = flavor;
 }
 
 void SpriteCan::print() {
-	cout << "Position: (" << posX << "," << posY << "); Flavor: " << flavor << endl;
+	cout << "Sprite can! Position: (" << posX << "," << posY << "); Flavor: " << flavor << endl;
 }

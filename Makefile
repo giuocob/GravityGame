@@ -20,7 +20,8 @@ RESOURCE_DIR = resource
 SRCRESOURCE = ResourceManager.cpp
 
 WORLD_DIR = world
-SRCWORLD = Actor.cpp ActorContainer.cpp ActorData.cpp Scene.cpp WorldManager.cpp
+SRCWORLD = Actor.cpp ActorContainer.cpp ActorData.cpp Scene.cpp WorldManager.cpp \
+		EntityManager.cpp
 
 SCENE_DIR = scenes
 SRCSCENE = TestScene.cpp

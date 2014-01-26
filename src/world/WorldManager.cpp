@@ -25,14 +25,14 @@ WorldManager::~WorldManager()
 
 bool WorldManager::init()
 {
-    currentScene = loadScene(sceneLookup["TestScene"]);
+    if((currentScene = loadScene(sceneLookup["TestScene"])) == NULL) return false;
     return true;
 }
 
 bool WorldManager::update()
 {
     if(!currentScene->update()) {
-        error = currentScene->error;
+        error = currentScene->getError();
         return false;
     }
     return true;
@@ -73,7 +73,8 @@ Scene* WorldManager::loadScene(WorldInfo::SceneId id) {
     //Populate actor containers in scene
     getline(sceneFile,line);
     while(line.compare(SF_DELIMITER)) {
-        ActorContainer* container = createActorContainer(actorLookup[line],scene);
+        ActorContainer* container;
+        if((container = createActorContainer(line,scene)) == NULL) return NULL;
         scene->addActorContainer(container,actorLookup[line]);
         getline(sceneFile,line);
     }
@@ -94,7 +95,10 @@ Scene* WorldManager::loadScene(WorldInfo::SceneId id) {
             actorData->addData(segment1,segment2);
             getline(sceneFile,line);
         }
-        scene->createActor(actorId,actorData);
+        if(scene->createActor(actorId,actorData) == NULL) {
+            error = scene->getError();
+            return NULL;
+        }
         getline(sceneFile,line);
     }
 
@@ -114,12 +118,16 @@ ActorContainer* WorldManager::createActorContainer(WorldInfo::ActorId id, Scene*
         case WorldInfo::SpriteCan :
 			return (ActorContainer*)(new SpriteCanContainer(scene));
         default :
+            error = "WorldManager: internal unhandled actorId";
             return NULL;
     }
 }
 
 ActorContainer* WorldManager::createActorContainer(std::string name, Scene* scene) {
 	map<string,WorldInfo::ActorId>::iterator iter = actorLookup.find(name);
-	if(iter == actorLookup.end()) return NULL;
+	if(iter == actorLookup.end()) {
+        error = "WorldManager: invalid actorId";
+        return NULL;
+    }
 	return createActorContainer(iter->second,scene);
 }

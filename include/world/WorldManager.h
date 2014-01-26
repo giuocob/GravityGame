@@ -17,7 +17,7 @@
 #include "scenes/TestScene.h"
 
 namespace GravityGame {
-    class WorldManager : Manager
+    class WorldManager : public Manager
     {
 		private:
 			std::map<std::string,WorldInfo::SceneId> sceneLookup;

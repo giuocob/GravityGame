@@ -17,7 +17,7 @@ Scene::~Scene()
 
 bool Scene::update() {
 	if(!entityManager.update()) {
-		error = entityManager.error;
+		error = entityManager.getError();
 		return false;
 	}
 	return true;
@@ -28,9 +28,17 @@ void Scene::addActorContainer(ActorContainer* container, WorldInfo::ActorId acto
 }
 
 Actor* Scene::createActor(WorldInfo::ActorId actorId) {
-	ActorContainer *container = sceneActors[actorId];
+	map<WorldInfo::ActorId,ActorContainer*>::iterator iter = sceneActors.find(actorId);
+	if(iter == sceneActors.end()) {
+		error = "Scene: requested actor container was not found for this scene";
+		return NULL;
+	}
+	ActorContainer *container = iter->second;
 	Actor *actor = container->createActor();
-	actor->init();
+	if(!actor->init()) {
+		error = actor->getError();
+		return NULL;
+	}
 	return actor;
 }
 

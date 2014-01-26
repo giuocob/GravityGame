@@ -11,7 +11,7 @@ OBJ_DIR = obj
 SRC_DIR = src
 INCLUDE_DIR = include
 
-SRCMAIN = Game.cpp Manager.cpp
+SRCMAIN = Game.cpp Manager.cpp ThrowsError.cpp
 
 INPUT_DIR = input
 SRCINPUT = InputManager.cpp

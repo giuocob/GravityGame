@@ -1,16 +1,15 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 
+#include "ThrowsError.h"
+
 #include "SFML/Audio.hpp"
 #include "SFML/Graphics.hpp"
 #include <string>
 
 namespace GravityGame {
-    class Manager
-    {
+    class Manager : public ThrowsError {
         public:
-            std::string error;
-
             Manager();
             virtual ~Manager();
             virtual bool init() =0;

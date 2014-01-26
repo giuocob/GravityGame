@@ -8,7 +8,7 @@
 
 
 namespace GravityGame {
-    class ResourceManager : Manager
+    class ResourceManager : public Manager
     {
         protected:
             std::map<std::string,sf::Texture*> textureIndex;

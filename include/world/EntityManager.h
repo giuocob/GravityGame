@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 
+#include "ThrowsError.h"
 #include "world/Actor.h"
 #include "world/WorldInfo.h"
 
@@ -13,7 +14,7 @@ namespace GravityGame {
 	//the iterators necessary for actors to be updated. Note that this class stores pointers to its entities,
 	//and it assumes ownership of ALL entities given to it.
 	//Actors are sorted by their X position for collision detection.
-	class EntityManager {
+	class EntityManager : public ThrowsError {
 		private:
 			std::list<Actor*> actorList;
 			std::list<Actor*> actorListUnloaded;
@@ -22,8 +23,6 @@ namespace GravityGame {
 			void addPending();
 
 		public:
-			std::string error;
-
 			EntityManager();
 			~EntityManager();
 

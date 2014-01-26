@@ -8,7 +8,6 @@ namespace GravityGame {
     class TestScene : public Scene
     {
         public:
-			friend class WorldManager;
             TestScene();
             virtual ~TestScene();
         protected:

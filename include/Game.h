@@ -14,7 +14,7 @@
 #define FRAMERATE 60
 
 namespace GravityGame {
-    class Game
+    class Game : public ThrowsError
     {
         private:
             sf::RenderWindow *window;

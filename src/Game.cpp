@@ -1,6 +1,7 @@
 #include "Game.h"
 
 using namespace GravityGame;
+using namespace std;
 
 namespace GravityGame {
 
@@ -15,16 +16,27 @@ Game::Game(sf::RenderWindow *gameWindow)
 
 Game::~Game()
 {
-    //dtor
+    delete resourceManager;
+    delete inputManager;
+    delete worldManager;
 }
 
 bool Game::initialize()
 {
-    resourceManager->init();
+    if(!resourceManager->init()) {
+        error = resourceManager->getError();
+        return false;
+    }
     resourceManager->debug = true;
-    inputManager->init();
+    if(!inputManager->init()) {
+        error = inputManager->getError();
+        return false;
+    }
     inputManager->debug = true;   //DEBUG
-    worldManager->init();
+    if(!worldManager->init()) {
+        error = worldManager->getError();
+        return false;
+    }
     return true;
 }
 
@@ -55,11 +67,17 @@ bool Game::run()
         window->draw(ponysprite);
         window->display();
 
-        //InputManager debug
-        inputManager->update();
+        //Update input state
+        if(!inputManager->update()) {
+            error = inputManager->getError();
+            return false;
+        }
 
         //Update just about everything
-        worldManager->update();
+        if(!worldManager->update()) {
+            error = worldManager->getError();
+            return false;
+        }
 
     }
     return true;
@@ -74,6 +92,19 @@ sf::RenderWindow* Game::getWindow()
 
 
 Game* Game::g_game = NULL;
+
+
+void runGame(Game* theGame) {
+    if(!theGame->initialize()) {
+        cout << "FATAL ERROR IN GRAVITYGAME" << endl << theGame->getError() << endl;
+        return;
+    }
+    if(!theGame->run()) {
+        cout << "FATAL ERROR IN GRAVITYGAME" << endl << theGame->getError() << endl;
+        return;
+    }
+}
+
 int main()
 {
     sf::RenderWindow *gameWindow = new sf::RenderWindow(sf::VideoMode(GAME_WIDTH, GAME_HEIGHT, 32), "Gravity");
@@ -81,8 +112,9 @@ int main()
     gameWindow->setVerticalSyncEnabled(false);
 
     Game::g_game = new Game(gameWindow);
-    Game::g_game->initialize();
-    Game::g_game->run();
+    runGame(Game::g_game);
+    //Game::g_game->initialize();
+    //Game::g_game->run();
 
     delete Game::g_game;
     delete gameWindow;

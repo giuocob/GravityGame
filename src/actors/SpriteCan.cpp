@@ -44,8 +44,9 @@ SpriteCan::~SpriteCan()
     //dtor
 }
 
-void SpriteCan::init() {
+bool SpriteCan::init() {
 	print();
+	return true;
 }
 
 

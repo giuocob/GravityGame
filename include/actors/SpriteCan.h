@@ -22,7 +22,7 @@ namespace GravityGame {
         public:
             SpriteCan(Scene* scene);
             virtual ~SpriteCan();
-            void init();
+            bool init();
             virtual bool update();
             void setFlavor(std::string flavor);
             void print();

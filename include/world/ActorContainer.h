@@ -3,6 +3,8 @@
 
 #include <map>
 #include <string>
+
+#include "ThrowsError.h"
 #include "world/Actor.h"
 #include "world/ActorData.h"
 #include "world/WorldInfo.h"
@@ -12,7 +14,7 @@ namespace GravityGame {
     class Scene;
 
 
-    class ActorContainer
+    class ActorContainer : public ThrowsError
     {
         protected:
             Scene *scene;

@@ -1,6 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include "ThrowsError.h"
 #include "world/WorldInfo.h"
 #include "world/ActorContainer.h"
 #include "world/EntityManager.h"
@@ -10,15 +11,12 @@
 #include <string>
 
 namespace GravityGame {
-	class WorldManager;  //Forward for world manager
-	
-    class Scene
+    class Scene : public ThrowsError
     {
         protected:
             EntityManager entityManager;
 
 		public:
-            std::string error;
             std::string sceneFile;   //Each scene should set this
             std::map<WorldInfo::ActorId,ActorContainer*> sceneActors;
             std::vector<Actor*> actorList;

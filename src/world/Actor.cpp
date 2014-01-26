@@ -18,12 +18,9 @@ Actor::~Actor()
     //dtor
 }
 
-string Actor::getError() {
-	return error;
-}
-
-void Actor::init() {
+bool Actor::init() {
 	//By default, no initialization
+	return true;
 }
 
 bool Actor::update() {

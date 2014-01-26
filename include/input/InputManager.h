@@ -5,7 +5,7 @@
 #include <vector>
 
 namespace GravityGame {
-    class InputManager : Manager
+    class InputManager : public Manager
     {
         public:
             enum inputEvent {

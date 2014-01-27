@@ -44,7 +44,7 @@ bool Game::run()
 {
     //Image
     sf::Texture pony;
-    pony.loadFromFile("res/sprite2.jpg");
+    pony.loadFromFile("res/images/test/sprite2.png");
     sf::Sprite ponysprite(pony);
 
     // Start game loop

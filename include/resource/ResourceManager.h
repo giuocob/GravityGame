@@ -3,6 +3,7 @@
 
 #include "Manager.h"
 #include "world/WorldInfo.h"
+#include "world/Scene.h"
 #include <string>
 #include <map>
 
@@ -20,7 +21,7 @@ namespace GravityGame {
             virtual ~ResourceManager();
             bool init();
             bool update();
-            bool loadSceneContent();
+            bool loadSceneContent(Scene* toLoad);
     };
 }
 

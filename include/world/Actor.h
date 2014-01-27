@@ -7,6 +7,7 @@
 
 #include "ThrowsError.h"
 #include "world/WorldInfo.h"
+#include "world/Animation.h"
 
 namespace GravityGame {
     class Scene;
@@ -16,6 +17,9 @@ namespace GravityGame {
     	protected:
             Scene* scene;
     		double posX,posY;
+
+            std::map<std::string,Animation*> animationMap;
+            Animation* currentAnimation;
 
         public:
             Actor(Scene* scene);   //Default values for each type of actor can be set here

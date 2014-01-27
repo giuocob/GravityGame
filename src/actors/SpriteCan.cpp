@@ -7,7 +7,9 @@ using namespace std;
 
 SpriteCanContainer::SpriteCanContainer(Scene* scene) : ActorContainer(scene)
 {
-    textureMap = { {"sprite","res/sprite2.jpg"} };
+    textureMap = { {"sprite","test/sprite2.png"},
+    				{"redsprite","test/sprite2_red.png"}
+    				 };
 }
 
 SpriteCanContainer::~SpriteCanContainer()
@@ -45,13 +47,23 @@ SpriteCan::~SpriteCan()
 }
 
 bool SpriteCan::init() {
-	//print();
+	//Initialize animations
+	Animation *spriteAnim = new Animation();
+	for(int i=0;i<10;i++) {
+		spriteAnim->pushLoopFrame(string("sprite"));
+	}
+	for(int i=0;i<10;i++) {
+		spriteAnim->pushLoopFrame(string("redsprite"));
+	}
+	animationMap["anim"] = spriteAnim;
+	currentAnimation = spriteAnim;
 	return true;
 }
 
 
 bool SpriteCan::update() {
-	//print();
+	currentAnimation->advanceFrame();
+	std::string texture = currentAnimation->getFrame()->texture;
 	return true;
 }
 

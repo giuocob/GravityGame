@@ -26,6 +26,10 @@ WorldManager::~WorldManager()
 bool WorldManager::init()
 {
     if((currentScene = loadScene(sceneLookup["TestScene"])) == NULL) return false;
+    if(!Game::g_game->resourceManager->loadSceneContent(currentScene)) {
+        error = Game::g_game->resourceManager->getError();
+        return false;
+    }
     return true;
 }
 

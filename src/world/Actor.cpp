@@ -15,7 +15,12 @@ Actor::Actor(Scene* scene)
 
 Actor::~Actor()
 {
-    //dtor
+    //Delete animations
+    map<string,Animation*>::iterator animIter;
+    for(animIter=animationMap.begin();animIter!=animationMap.end();animIter++) {
+    	delete animIter->second;
+    }
+    animationMap.clear();
 }
 
 bool Actor::init() {

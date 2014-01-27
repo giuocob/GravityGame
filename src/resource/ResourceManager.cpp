@@ -26,12 +26,10 @@ bool ResourceManager::update()
     return true;
 }
 
-bool ResourceManager::loadSceneContent()
+bool ResourceManager::loadSceneContent(Scene* toLoad)
 {
     textureIndex.clear();
-    Scene *toLoad = Game::g_game->worldManager->currentScene;
     ActorContainer *currentContainer;
-    //if(!toLoad->actorListReady) return false;
     //Nested loop: iterate over all images in all actorContainers in the scene
     map<WorldInfo::ActorId,ActorContainer*>::iterator actorit;
     map<string,string>::iterator imageit;
@@ -42,7 +40,10 @@ bool ResourceManager::loadSceneContent()
         {
             if(textureIndex.count(imageit->first) != 0) continue;
             sf::Texture *newTexture = new sf::Texture();
-            newTexture->loadFromFile(imageit->second);
+            if(!newTexture->loadFromFile("res/images/"+imageit->second)) {
+                error = "Could not load image: res/images/"+ imageit->second;
+                return false;
+            }
             textureIndex.insert(make_pair(imageit->first,newTexture));
             if(debug) cout << "ResourceManager: loaded " << imageit->second << endl;
         }

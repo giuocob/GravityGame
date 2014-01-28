@@ -1,6 +1,8 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
+#include <SFML/Graphics.hpp>
+
 #include "Manager.h"
 #include "world/WorldInfo.h"
 #include "world/Scene.h"
@@ -22,6 +24,8 @@ namespace GravityGame {
             bool init();
             bool update();
             bool loadSceneContent(Scene* toLoad);
+
+            sf::Texture* getTexture(std::string texName);
     };
 }
 

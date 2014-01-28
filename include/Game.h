@@ -8,6 +8,7 @@
 #include "resource/ResourceManager.h"
 #include "input/InputManager.h"
 #include "world/WorldManager.h"
+#include "drawing/DrawingManager.h"
 
 #define GAME_WIDTH 800
 #define GAME_HEIGHT 600
@@ -26,6 +27,8 @@ namespace GravityGame {
             ResourceManager *resourceManager;
             InputManager *inputManager;
             WorldManager *worldManager;
+            DrawingManager *drawingManager;
+
             Game(sf::RenderWindow *gameWindow);
             virtual ~Game();
             bool initialize();

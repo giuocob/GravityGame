@@ -13,6 +13,10 @@ EntityManager::~EntityManager() {
 	clear();
 }
 
+std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> EntityManager::getActorIterator() {
+	return make_pair(actorList.begin(),actorList.end());
+}
+
 
 void EntityManager::addPending() {
 	while(!pendingActors.empty()) {

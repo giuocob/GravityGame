@@ -18,6 +18,11 @@ string Scene::getSceneFile() {
 	return sceneFile;
 }
 
+std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> Scene::getActorIterator() {
+	return entityManager.getActorIterator();
+}
+
+
 
 bool Scene::update() {
 	if(!entityManager.update()) {

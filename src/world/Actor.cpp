@@ -23,6 +23,10 @@ Actor::~Actor()
     animationMap.clear();
 }
 
+AnimationFrame* Actor::getCurrentFrame() {
+	return currentAnimation->getFrame();
+}
+
 bool Actor::init() {
 	//By default, no initialization
 	return true;

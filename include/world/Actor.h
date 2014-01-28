@@ -24,6 +24,9 @@ namespace GravityGame {
         public:
             Actor(Scene* scene);   //Default values for each type of actor can be set here
             virtual ~Actor();
+
+            AnimationFrame* getCurrentFrame();
+
             virtual bool init();   //Called after specific values have been set
             virtual bool update();   //Update the actor per frame
 

@@ -31,6 +31,9 @@ namespace GravityGame {
 
             WorldManager();
             virtual ~WorldManager();
+
+            Scene* getCurrentScene();
+
             bool init();
             bool update();
             Scene* createScene(WorldInfo::SceneId id);

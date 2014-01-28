@@ -3,6 +3,7 @@
 
 using namespace GravityGame;
 using namespace std;
+using namespace sf;
 
 ResourceManager::ResourceManager() : Manager()
 {
@@ -49,4 +50,10 @@ bool ResourceManager::loadSceneContent(Scene* toLoad)
         }
     }
     return true;
+}
+
+Texture* ResourceManager::getTexture(string texName) {
+    map<string,Texture*>::iterator iter = textureIndex.find(texName);
+    if(iter == textureIndex.end()) return NULL;
+    return textureIndex[texName];
 }

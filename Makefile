@@ -13,6 +13,9 @@ INCLUDE_DIR = include
 
 SRCMAIN = Game.cpp Manager.cpp ThrowsError.cpp
 
+DRAWING_DIR = drawing
+SRCDRAWING = DrawingManager.cpp
+
 INPUT_DIR = input
 SRCINPUT = InputManager.cpp
 
@@ -30,6 +33,7 @@ ACTOR_DIR = actors
 SRCACTOR = Player.cpp SpriteCan.cpp
 
 SOURCES = $(SRCMAIN) \
+		$(SRCDRAWING:%=$(DRAWING_DIR)/%) \
 		$(SRCINPUT:%=$(INPUT_DIR)/%) \
 		$(SRCRESOURCE:%=$(RESOURCE_DIR)/%) \
 		$(SRCWORLD:%=$(WORLD_DIR)/%) \
@@ -53,6 +57,7 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 dir: 
 	mkdir -p $(BIN_DIR)
 	mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)/$(DRAWING_DIR)
 	mkdir -p $(OBJ_DIR)/$(INPUT_DIR)
 	mkdir -p $(OBJ_DIR)/$(RESOURCE_DIR)
 	mkdir -p $(OBJ_DIR)/$(WORLD_DIR)

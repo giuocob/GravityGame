@@ -3,7 +3,6 @@
 using namespace GravityGame;
 using namespace std;
 
-namespace GravityGame {
 
 Game::Game(sf::RenderWindow *gameWindow)
 {
@@ -12,6 +11,7 @@ Game::Game(sf::RenderWindow *gameWindow)
     resourceManager = new ResourceManager();
     inputManager = new InputManager();
     worldManager = new WorldManager();
+    drawingManager = new DrawingManager(worldManager,resourceManager,window);
 }
 
 Game::~Game()
@@ -19,6 +19,7 @@ Game::~Game()
     delete resourceManager;
     delete inputManager;
     delete worldManager;
+    delete drawingManager;
 }
 
 bool Game::initialize()
@@ -37,15 +38,15 @@ bool Game::initialize()
         error = worldManager->getError();
         return false;
     }
+    if(!drawingManager->init()) {
+        error = drawingManager->getError();
+        return false;
+    }
     return true;
 }
 
 bool Game::run()
 {
-    //Image
-    sf::Texture pony;
-    pony.loadFromFile("res/images/test/sprite2.png");
-    sf::Sprite ponysprite(pony);
 
     // Start game loop
     while (window->isOpen())
@@ -59,13 +60,6 @@ bool Game::run()
                 window->close();
         }
 
-        // Clear the screen (fill it with black color)
-        window->clear();
-
-        // Display window contents on screen
-        ponysprite.rotate(1);
-        window->draw(ponysprite);
-        window->display();
 
         //Update input state
         if(!inputManager->update()) {
@@ -79,6 +73,12 @@ bool Game::run()
             return false;
         }
 
+        //Update graphical stuff and draw the scene
+        if(!drawingManager->update()) {
+            error = drawingManager->getError();
+            return false;
+        }
+
     }
     return true;
 }
@@ -88,7 +88,6 @@ sf::RenderWindow* Game::getWindow()
     return this->window;
 }
 
-}
 
 
 Game* Game::g_game = NULL;

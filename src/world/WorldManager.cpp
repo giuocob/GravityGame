@@ -23,6 +23,10 @@ WorldManager::~WorldManager()
     //dtor
 }
 
+Scene* WorldManager::getCurrentScene() {
+    return currentScene;
+}
+
 bool WorldManager::init()
 {
     if((currentScene = loadScene(sceneLookup["TestScene"])) == NULL) return false;

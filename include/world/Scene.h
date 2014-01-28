@@ -24,6 +24,8 @@ namespace GravityGame {
             Scene();
             virtual ~Scene();
             std::string getSceneFile();
+            //Returns iterators to beginning and end of actor list, respectively
+            std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> getActorIterator();
 
             bool update();
             void addActorContainer(ActorContainer* container, WorldInfo::ActorId actorId);

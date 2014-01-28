@@ -26,6 +26,9 @@ namespace GravityGame {
 			EntityManager();
 			~EntityManager();
 
+			//Returns iterators to beginning and end of actor list, respectively
+			std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> getActorIterator(); 
+
 			void clear();
 			void addActor(Actor* actor);
 			void beginFrame();    //Call this before update() on each frame

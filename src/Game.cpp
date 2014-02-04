@@ -47,7 +47,6 @@ bool Game::initialize()
 
 bool Game::run()
 {
-
     // Start game loop
     while (window->isOpen())
     {

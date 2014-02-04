@@ -10,4 +10,9 @@ POSX=200
 POSY=250
 FLAVOR=normal
 &&&&
+SpriteCan
+POSX=300
+POSY=150
+FLAVOR=cherry
+&&&&
 &&&&

@@ -18,14 +18,19 @@ bool DrawingManager::draw() {
 	pair<list<Actor*>::iterator,list<Actor*>::iterator> beginAndEnd = scene->getActorIterator();
 	list<Actor*>::iterator iter;
 	for(iter=beginAndEnd.first;iter!=beginAndEnd.second;iter++) {
-		string frameName = (*iter)->getCurrentFrame()->texture;
+		Sprite *sprite = (*iter)->prepareSprite();
+		if(sprite == NULL) {
+			error = (*iter)->getError();
+			return false;
+		}
+		/*string frameName = (*iter)->getCurrentFrame()->texture;
 		Texture *texture = resourceManager->getTexture(frameName);
 		if(texture == NULL) {
 			error = "DrawingManager: texture " + frameName + " not found in texture index";
 			return false;
 		}
-		Sprite sprite(*texture);
-		window->draw(sprite);
+		Sprite sprite(*texture);*/
+		window->draw(*sprite);
 	}
 
 	window->display();

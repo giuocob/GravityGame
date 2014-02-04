@@ -2,6 +2,8 @@
 #define WORLDMANAGER_H
 
 #include "Manager.h"
+#include "resource/ResourceManager.h"
+#include "input/InputManager.h"
 #include "world/Scene.h"
 #include "world/WorldInfo.h"
 #include "world/ActorContainer.h"
@@ -20,6 +22,9 @@ namespace GravityGame {
     class WorldManager : public Manager
     {
 		private:
+            ResourceManager *resourceManager;
+            InputManager *inputManager;
+
 			std::map<std::string,WorldInfo::SceneId> sceneLookup;
 			std::map<std::string,WorldInfo::ActorId> actorLookup;
 
@@ -29,7 +34,7 @@ namespace GravityGame {
         public:
             Scene *currentScene;
 
-            WorldManager();
+            WorldManager(ResourceManager *rm, InputManager *im);
             virtual ~WorldManager();
 
             Scene* getCurrentScene();

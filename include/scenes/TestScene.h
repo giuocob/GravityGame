@@ -8,7 +8,7 @@ namespace GravityGame {
     class TestScene : public Scene
     {
         public:
-            TestScene();
+            TestScene(ResourceManager *rm);
             virtual ~TestScene();
         protected:
         private:

@@ -4,9 +4,9 @@
 using namespace GravityGame;
 using namespace std;
 
-Scene::Scene()
+Scene::Scene(ResourceManager* rm)
 {
-	//Nothing?
+	this->resourceManager = rm;
 }
 
 Scene::~Scene()
@@ -16,6 +16,10 @@ Scene::~Scene()
 
 string Scene::getSceneFile() {
 	return sceneFile;
+}
+
+ResourceManager* Scene::getResourceManager() {
+	return resourceManager;
 }
 
 std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> Scene::getActorIterator() {

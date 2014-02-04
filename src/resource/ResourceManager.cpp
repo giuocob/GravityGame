@@ -1,5 +1,5 @@
 #include "resource/ResourceManager.h"
-#include "Game.h"
+#include "world/WorldManager.h"
 
 using namespace GravityGame;
 using namespace std;

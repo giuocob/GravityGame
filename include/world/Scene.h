@@ -5,6 +5,7 @@
 #include "world/WorldInfo.h"
 #include "world/ActorContainer.h"
 #include "world/EntityManager.h"
+#include "resource/ResourceManager.h"
 
 #include <vector>
 #include <map>
@@ -14,6 +15,7 @@ namespace GravityGame {
     class Scene : public ThrowsError
     {
         protected:
+            ResourceManager *resourceManager;
             EntityManager entityManager;
             std::string sceneFile;   //Each scene should set this
 
@@ -21,9 +23,10 @@ namespace GravityGame {
             std::map<WorldInfo::ActorId,ActorContainer*> sceneActors;
             std::vector<Actor*> actorList;
             
-            Scene();
+            Scene(ResourceManager *rm);
             virtual ~Scene();
             std::string getSceneFile();
+            ResourceManager* getResourceManager();
             //Returns iterators to beginning and end of actor list, respectively
             std::pair<std::list<Actor*>::iterator,std::list<Actor*>::iterator> getActorIterator();
 

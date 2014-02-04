@@ -5,12 +5,13 @@
 
 #include "Manager.h"
 #include "world/WorldInfo.h"
-#include "world/Scene.h"
 #include <string>
 #include <map>
 
 
 namespace GravityGame {
+    class Scene;
+    
     class ResourceManager : public Manager
     {
         protected:

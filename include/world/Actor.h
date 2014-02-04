@@ -7,6 +7,7 @@
 
 #include "ThrowsError.h"
 #include "world/WorldInfo.h"
+#include "resource/ResourceManager.h"
 #include "world/Animation.h"
 
 namespace GravityGame {
@@ -15,11 +16,15 @@ namespace GravityGame {
 
     class Actor : public ThrowsError {
     	protected:
+            ResourceManager* resourceManager;
             Scene* scene;
-    		double posX,posY;
 
             std::map<std::string,Animation*> animationMap;
             Animation* currentAnimation;
+
+    		double posX,posY;
+            sf::Sprite sprite;
+
 
         public:
             Actor(Scene* scene);   //Default values for each type of actor can be set here
@@ -33,6 +38,9 @@ namespace GravityGame {
             void setPosX(double x);
             void setPosY(double y);
             void setPosition(double x, double y);
+
+            //Prepare the actor's sprite for drawing. Texture comes from the DrawingManager.
+            virtual sf::Sprite* prepareSprite();
 
     };
 }

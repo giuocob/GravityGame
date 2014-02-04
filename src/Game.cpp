@@ -10,7 +10,7 @@ Game::Game(sf::RenderWindow *gameWindow)
 
     resourceManager = new ResourceManager();
     inputManager = new InputManager();
-    worldManager = new WorldManager();
+    worldManager = new WorldManager(resourceManager,inputManager);
     drawingManager = new DrawingManager(worldManager,resourceManager,window);
 }
 
@@ -89,10 +89,6 @@ sf::RenderWindow* Game::getWindow()
 }
 
 
-
-Game* Game::g_game = NULL;
-
-
 void runGame(Game* theGame) {
     if(!theGame->initialize()) {
         cout << "FATAL ERROR IN GRAVITYGAME" << endl << theGame->getError() << endl;
@@ -110,12 +106,10 @@ int main()
     gameWindow->setFramerateLimit(FRAMERATE);
     gameWindow->setVerticalSyncEnabled(false);
 
-    Game::g_game = new Game(gameWindow);
-    runGame(Game::g_game);
-    //Game::g_game->initialize();
-    //Game::g_game->run();
+    Game *game = new Game(gameWindow);
+    runGame(game);
 
-    delete Game::g_game;
+    delete game;
     delete gameWindow;
     return 0;
 }

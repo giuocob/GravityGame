@@ -21,9 +21,6 @@ namespace GravityGame {
             sf::RenderWindow *window;
 
         public:
-            static Game *g_game;
-            void createGame();
-
             ResourceManager *resourceManager;
             InputManager *inputManager;
             WorldManager *worldManager;

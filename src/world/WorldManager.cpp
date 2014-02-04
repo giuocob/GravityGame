@@ -1,5 +1,4 @@
 #include "world/WorldManager.h"
-#include "Game.h"
 
 #include <iostream>
 #include <fstream>
@@ -8,8 +7,11 @@
 using namespace GravityGame;
 using namespace std;
 
-WorldManager::WorldManager()
+WorldManager::WorldManager(ResourceManager *rm, InputManager *im)
 {
+    resourceManager = rm;
+    inputManager = im;
+
     sceneLookup = { {"TestScene",WorldInfo::TestScene} };
     actorLookup = { {"Player",WorldInfo::Player},
 					{"SpriteCan",WorldInfo::SpriteCan} };
@@ -30,8 +32,8 @@ Scene* WorldManager::getCurrentScene() {
 bool WorldManager::init()
 {
     if((currentScene = loadScene(sceneLookup["TestScene"])) == NULL) return false;
-    if(!Game::g_game->resourceManager->loadSceneContent(currentScene)) {
-        error = Game::g_game->resourceManager->getError();
+    if(!resourceManager->loadSceneContent(currentScene)) {
+        error = resourceManager->getError();
         return false;
     }
     return true;
@@ -49,7 +51,7 @@ bool WorldManager::update()
 Scene* WorldManager::createScene(WorldInfo::SceneId id) {
 	switch(id) {
 		case WorldInfo::TestScene :
-			return (Scene*)(new TestScene());
+			return (Scene*)(new TestScene(resourceManager));
 		default:
 			return NULL;
 	}

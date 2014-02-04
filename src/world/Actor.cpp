@@ -39,15 +39,15 @@ bool Actor::update() {
 	return true;
 }
 
-void Actor::setPosX(double x) {
+void Actor::setPosX(float x) {
 	posX = x;
 }
 
-void Actor::setPosY(double y) {
+void Actor::setPosY(float y) {
 	posY = y;
 }
 
-void Actor::setPosition(double x, double y) {
+void Actor::setPosition(float x, float y) {
 	posX = x;
 	posY = y;
 }

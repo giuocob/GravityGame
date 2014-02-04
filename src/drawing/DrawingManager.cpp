@@ -23,13 +23,6 @@ bool DrawingManager::draw() {
 			error = (*iter)->getError();
 			return false;
 		}
-		/*string frameName = (*iter)->getCurrentFrame()->texture;
-		Texture *texture = resourceManager->getTexture(frameName);
-		if(texture == NULL) {
-			error = "DrawingManager: texture " + frameName + " not found in texture index";
-			return false;
-		}
-		Sprite sprite(*texture);*/
 		window->draw(*sprite);
 	}
 

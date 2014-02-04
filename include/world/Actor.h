@@ -22,7 +22,7 @@ namespace GravityGame {
             std::map<std::string,Animation*> animationMap;
             Animation* currentAnimation;
 
-    		double posX,posY;
+    		float posX,posY;
             sf::Sprite sprite;
 
 
@@ -35,9 +35,9 @@ namespace GravityGame {
             virtual bool init();   //Called after specific values have been set
             virtual bool update();   //Update the actor per frame
 
-            void setPosX(double x);
-            void setPosY(double y);
-            void setPosition(double x, double y);
+            void setPosX(float x);
+            void setPosY(float y);
+            void setPosition(float x, float y);
 
             //Prepare the actor's sprite for drawing. Texture comes from the DrawingManager.
             virtual sf::Sprite* prepareSprite();
